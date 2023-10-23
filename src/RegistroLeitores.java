@@ -15,6 +15,7 @@ public class RegistroLeitores extends javax.swing.JDialog {
     public RegistroLeitores(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -38,12 +39,15 @@ public class RegistroLeitores extends javax.swing.JDialog {
                 {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null}
             },
             new String [] {
                 "Nome", "Data de Nascimento", "Nº de Leitor", "Telefone", "Email", "Login", "Password"
             }
         ));
+        jTable1.setMaximumSize(new java.awt.Dimension(2147483647, 2147483647));
+        jTable1.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(jTable1);
 
         jButton1.setText("Remover Todos");
@@ -55,7 +59,7 @@ public class RegistroLeitores extends javax.swing.JDialog {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 623, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 835, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jButton1)
                         .addGap(0, 0, Short.MAX_VALUE)))
@@ -65,10 +69,10 @@ public class RegistroLeitores extends javax.swing.JDialog {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 287, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         pack();

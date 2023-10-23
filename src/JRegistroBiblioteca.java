@@ -42,18 +42,20 @@ public class JRegistroBiblioteca extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         jMenuItem5 = new javax.swing.JMenuItem();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        accountStatusLabel = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        activityTextArea = new javax.swing.JTextArea();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu6 = new javax.swing.JMenu();
-        jMenuItem9 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem11 = new javax.swing.JMenuItem();
         jMenuItem10 = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
+        jMenuItem12 = new javax.swing.JMenuItem();
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenuItem8 = new javax.swing.JMenuItem();
@@ -65,28 +67,16 @@ public class JRegistroBiblioteca extends javax.swing.JFrame {
         jMenuItem5.setText("jMenuItem5");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                formKeyPressed(evt);
-            }
-        });
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel1.setText("Biblioteca");
 
-        jLabel2.setText("Not Logged");
+        accountStatusLabel.setText("Not Logged");
 
-        jMenu6.setText("File");
-
-        jMenuItem9.setText("Sair");
-        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem9ActionPerformed(evt);
-            }
-        });
-        jMenu6.add(jMenuItem9);
-
-        jMenuBar1.add(jMenu6);
+        activityTextArea.setEditable(false);
+        activityTextArea.setColumns(20);
+        activityTextArea.setRows(5);
+        jScrollPane1.setViewportView(activityTextArea);
 
         jMenu2.setText("Livros");
 
@@ -105,6 +95,9 @@ public class JRegistroBiblioteca extends javax.swing.JFrame {
             }
         });
         jMenu2.add(jMenuItem2);
+
+        jMenuItem11.setText("Remover Livro");
+        jMenu2.add(jMenuItem11);
 
         jMenuItem10.setText("Editoras");
         jMenu2.add(jMenuItem10);
@@ -128,6 +121,14 @@ public class JRegistroBiblioteca extends javax.swing.JFrame {
 
         jMenu5.setText("Conta");
 
+        jMenuItem12.setText("Sign Up Leitor");
+        jMenuItem12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem12ActionPerformed(evt);
+            }
+        });
+        jMenu5.add(jMenuItem12);
+
         jMenuItem6.setText("Login como Leitor");
         jMenu5.add(jMenuItem6);
 
@@ -147,31 +148,35 @@ public class JRegistroBiblioteca extends javax.swing.JFrame {
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(layout.createSequentialGroup()
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .add(jLabel2))
                     .add(layout.createSequentialGroup()
-                        .add(160, 160, 160)
-                        .add(jLabel1)
-                        .add(0, 160, Short.MAX_VALUE)))
+                        .addContainerGap(333, Short.MAX_VALUE)
+                        .add(accountStatusLabel))
+                    .add(layout.createSequentialGroup()
+                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(layout.createSequentialGroup()
+                                .add(14, 14, 14)
+                                .add(jScrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 372, Short.MAX_VALUE))
+                            .add(layout.createSequentialGroup()
+                                .addContainerGap(161, Short.MAX_VALUE)
+                                .add(jLabel1)
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 149, Short.MAX_VALUE)))
+                        .add(10, 10, 10)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(layout.createSequentialGroup()
-                .addContainerGap(126, Short.MAX_VALUE)
+                .addContainerGap()
                 .add(jLabel1)
-                .add(102, 102, 102)
-                .add(jLabel2)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(jScrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(accountStatusLabel)
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void formKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_formKeyPressed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
@@ -188,10 +193,9 @@ public class JRegistroBiblioteca extends javax.swing.JFrame {
         new RegistroLeitores(this, true).setVisible(true);
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
-    private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
-        this.dispose();
-        System.exit(0);
-    }//GEN-LAST:event_jMenuItem9ActionPerformed
+    private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem12ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -229,17 +233,19 @@ public class JRegistroBiblioteca extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel accountStatusLabel;
+    private javax.swing.JTextArea activityTextArea;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
-    private javax.swing.JMenu jMenu6;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
+    private javax.swing.JMenuItem jMenuItem11;
+    private javax.swing.JMenuItem jMenuItem12;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
@@ -247,7 +253,7 @@ public class JRegistroBiblioteca extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
-    private javax.swing.JMenuItem jMenuItem9;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 
 }

@@ -18,7 +18,7 @@ public class AdicionarLivro extends javax.swing.JDialog {
     public AdicionarLivro(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        setLocationRelativeTo(null);
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -73,19 +73,19 @@ public class AdicionarLivro extends javax.swing.JDialog {
             .addGroup(layout.createSequentialGroup()
                 .addGap(37, 37, 37)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(adicionarButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(cancelButton))
                     .addComponent(jLabel4)
                     .addComponent(jLabel3)
                     .addComponent(jLabel2)
                     .addComponent(jLabel1)
-                    .addComponent(nomeField)
-                    .addComponent(autorField)
+                    .addComponent(autorField, javax.swing.GroupLayout.DEFAULT_SIZE, 263, Short.MAX_VALUE)
                     .addComponent(editoraField)
-                    .addComponent(anoLancField))
-                .addContainerGap(43, Short.MAX_VALUE))
+                    .addComponent(anoLancField)
+                    .addComponent(nomeField))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -110,7 +110,7 @@ public class AdicionarLivro extends javax.swing.JDialog {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cancelButton)
                     .addComponent(adicionarButton))
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
 
         pack();

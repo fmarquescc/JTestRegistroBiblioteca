@@ -15,6 +15,7 @@ public class RegistroLivros extends javax.swing.JDialog {
     public RegistroLivros(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -44,6 +45,7 @@ public class RegistroLivros extends javax.swing.JDialog {
                 "Título", "Autor", "Editora", "Ano de Lançamento"
             }
         ));
+        jTable1.setMaximumSize(new java.awt.Dimension(2147483647, 2147483647));
         jScrollPane1.setViewportView(jTable1);
 
         jButton1.setText("Remover Todos");
@@ -65,8 +67,8 @@ public class RegistroLivros extends javax.swing.JDialog {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 275, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton1)
                 .addContainerGap())
         );
